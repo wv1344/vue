@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue</title>
+</head>
+
+<body>
+  <script src="../dist/vue.js"></script>
+
+  <div id="app">{{app}}</div>
+  <script>
+    // Vue 是一个MVVM框架（基于mvc框架）
+    const vm = new Vue({
+      el:'#app', // 第三
+      data: {
+        name: '12',
+        age: 12,
+        address: '123',
+        arr: [{ a: 1 }]
+      },
+      // template: '',  第二
+      // render 优先级 第一
+    })
+
+    console.log(vm._data);
+    vm._data.arr.push({ b: 222 })
+    console.log(vm.arr);
+    // 期待可以直接 vm.xxx 直接取值，
+
+    // vm.$options    // 可以通过实例的 $options
+  </script>
+</body>
+
+</html>
